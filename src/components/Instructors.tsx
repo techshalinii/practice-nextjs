@@ -46,5 +46,4 @@ function Instructors() {
     </div>
   )
 }
-
-export default Instructors
+export default Instructors;
