@@ -80,5 +80,4 @@ function UpcomingWebinars() {
     </div>
   )
 }
-
-export default UpcomingWebinars
+export default UpcomingWebinars;
