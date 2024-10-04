@@ -42,5 +42,4 @@ const WhyChooseUs = () => {
     </div>
   )
 }
-
 export default WhyChooseUs;
