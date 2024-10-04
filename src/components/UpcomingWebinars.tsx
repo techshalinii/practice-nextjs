@@ -65,8 +65,7 @@ function UpcomingWebinars() {
               description: webinar.description,
               link: '/'
             }
-          ))}
-          />
+          ))}/>
         </div>
 
         <div className="mt-10 text-center">
