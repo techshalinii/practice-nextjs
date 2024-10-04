@@ -18,32 +18,28 @@ export const Footer = () => {
         <li>
           <a
             href="#"
-            className="hover:text-white transition-colors duration-300"
-          >
+            className="hover:text-white transition-colors duration-300">
             Home
           </a>
         </li>
         <li>
           <a
             href="#"
-            className="hover:text-white transition-colors duration-300"
-          >
+            className="hover:text-white transition-colors duration-300">
             About
           </a>
         </li>
         <li>
           <a
             href="#"
-            className="hover:text-white transition-colors duration-300"
-          >
+            className="hover:text-white transition-colors duration-300">
             Courses
           </a>
         </li>
         <li>
           <a
             href="#"
-            className="hover:text-white transition-colors duration-300"
-          >
+            className="hover:text-white transition-colors duration-300">
             Contact
           </a>
         </li>
@@ -56,20 +52,17 @@ export const Footer = () => {
             <li>
             <a
           href="#"
-          className="hover:text-white transition-colors duration-300"
-        >
+          className="hover:text-white transition-colors duration-300">
           Facebook
         </a></li>
         <li><a
           href="#"
-          className="hover:text-white transition-colors duration-300"
-        >
+          className="hover:text-white transition-colors duration-300">
           Twitter
         </a></li>
         <li><a
           href="#"
-          className="hover:text-white transition-colors duration-300"
-        >
+          className="hover:text-white transition-colors duration-300">
           Instagram
         </a></li></ul>
       </div>
