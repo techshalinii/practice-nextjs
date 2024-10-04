@@ -11,8 +11,7 @@ import React, {
 } from "react";
 
 const MouseEnterContext = createContext<
-  [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
->(undefined);
+  [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined >(undefined);
 
 export const CardContainer = ({
   children,
@@ -47,15 +46,10 @@ export const CardContainer = ({
   };
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
-      <div
-        className={cn(
-          "py-20 flex items-center justify-center",
-          containerClassName
-        )}
+      <div className={cn("py-20 flex items-center justify-center",containerClassName)}
         style={{
           perspective: "1000px",
-        }}
-      >
+        }}>
         <div
           ref={containerRef}
           onMouseEnter={handleMouseEnter}
@@ -144,7 +138,6 @@ export const CardItem = ({
   );
 };
 
-// Create a hook to use the context
 export const useMouseEnter = () => {
   const context = useContext(MouseEnterContext);
   if (context === undefined) {
