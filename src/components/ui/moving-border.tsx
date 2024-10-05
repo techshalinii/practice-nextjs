@@ -12,12 +12,12 @@ import { cn } from "@/utils/cn";
 interface ButtonProps {
   borderRadius?: string;
   children: React.ReactNode;
-  as?: ElementType;
+  as?: ElementType; 
   containerClassName?: string;
   borderClassName?: string;
   duration?: number;
   className?: string;
-  [key: string]: unknown; // Use unknown for other props to avoid the use of any
+  [key: string]: unknown; 
 }
 
 export function Button({
@@ -75,7 +75,7 @@ interface MovingBorderProps {
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: unknown;
+  [key: string]: unknown; 
 }
 
 export const MovingBorder = ({
@@ -85,7 +85,7 @@ export const MovingBorder = ({
   ry,
   ...otherProps
 }: MovingBorderProps) => {
-  const pathRef = useRef<SVGRectElement>(null); // Properly typed reference to SVGRectElement
+  const pathRef = useRef<SVGRectElement>(null); 
   const progress = useMotionValue(0);
 
   useAnimationFrame((time) => {
@@ -121,7 +121,7 @@ export const MovingBorder = ({
           height="100%"
           rx={rx}
           ry={ry}
-          ref={pathRef} // Correctly typed reference
+          ref={pathRef} 
         />
       </svg>
       <motion.div
