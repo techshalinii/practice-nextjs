@@ -1,8 +1,8 @@
-"use client";
+"use client"; // Ensures that this component is rendered on the client
+
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { createNoise3D } from "simplex-noise";
 import { cn } from "@/utils/cn";
-
 
 export const WavyBackground = ({
   children,
@@ -30,8 +30,8 @@ export const WavyBackground = ({
   const noise = createNoise3D();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
-  const wRef = useRef<number>(window.innerWidth);
-  const hRef = useRef<number>(window.innerHeight);
+  const wRef = useRef<number>(0); // Initialize with 0
+  const hRef = useRef<number>(0); // Initialize with 0
   const ntRef = useRef<number>(0);
   const animationIdRef = useRef<number>();
 
@@ -49,7 +49,7 @@ export const WavyBackground = ({
   const init = useCallback(() => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
-    if (ctx) {
+    if (ctx && typeof window !== "undefined") {
       wRef.current = ctx.canvas.width = window.innerWidth;
       hRef.current = ctx.canvas.height = window.innerHeight;
       ctx.filter = `blur(${blur}px)`;
@@ -100,7 +100,12 @@ export const WavyBackground = ({
   };
 
   useEffect(() => {
-    init();
+    if (typeof window !== "undefined") {
+      wRef.current = window.innerWidth;
+      hRef.current = window.innerHeight;
+      init();
+    }
+
     return () => {
       if (animationIdRef.current) {
         cancelAnimationFrame(animationIdRef.current);
@@ -136,3 +141,4 @@ export const WavyBackground = ({
     </div>
   );
 };
+
